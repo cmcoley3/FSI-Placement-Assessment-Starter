@@ -15,18 +15,16 @@ const gbPlusBtn = document.querySelector('#add-gb')
 credit.textContent = `Created by ${yourName}`
 
 // Event listener for clicks on the "+" button for Gingerbread cookies
-function updateQtygb(displayQuantity) {
+function updateQtygb(displayQtygb) {
     let qtyGb = document.querySelector('.qty-gb')
-    qtyGb.innerHTML = displayQtyGb
+    qtyGb.innerHTML = displayQtygb
 }
-
-let qtyGb = 0
 
 gbPlusBtn.addEventListener('click', function() {
 // HINT: You can delete this console.log after you no longer need it!
 console.log('Gingerbread + button was clicked!')
 // TODO: Write the code to be run when the "+" button for "Gingerbread" is clicked
     gb++
-    updateQtygb(`qty-gb: ${qtyGb}`)
+    updateQtygb(`${gb}`)
 })
 // TODO: Hook up event listeners for the rest of the buttons
