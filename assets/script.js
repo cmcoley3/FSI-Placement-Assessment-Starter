@@ -5,6 +5,7 @@ let yourName = "Charles Coley" // HINT: Replace this with your own name!
 let gb = 0 // Gingerbread
 let cc = 0 // Chocolate Chip
 let sugar = 0 // Sugar Sprinkle
+let total = 0 // Total
 
 const credit = document.querySelector('#credit')
 
@@ -14,6 +15,7 @@ const ccPlusBtn = document.querySelector('#add-cc')
 const ccMnsBtn = document.querySelector('#minus-cc')
 const sugarPlusBtn = document.querySelector('#add-sugar')
 const sugarMnsBtn = document.querySelector('#minus-sugar')
+const cookieTotal = document.querySelector('#qty-total')
 
 // Code to update name display
 credit.textContent = `Created by ${yourName}`
@@ -22,18 +24,27 @@ credit.textContent = `Created by ${yourName}`
 function updateQtygb(displayQtygb) {
     let qtyGb = document.querySelector('#qty-gb')
     qtyGb.innerHTML = displayQtygb
+    console.log(total)
+}
+
+function updateTotal(displayQtyTotal) {
+    cookieTotal.innerHTML = displayQtyTotal
 }
 
 gbPlusBtn.addEventListener('click', function() {
     gb++
+    total++
     updateQtygb(`${gb}`)
+    updateTotal(`${total}`)
 })
 
 gbMnsBtn.addEventListener('click', function(e){
     if (gb > 0) {
         gb--
+        total--
     }
     updateQtygb(`${gb}`)
+    updateTotal(`${total}`)
 })
 
 // Chocolate Chip + and - buttons
@@ -44,14 +55,18 @@ function updateQtycc(displayQtycc) {
 
 ccPlusBtn.addEventListener('click', function() {
     cc++
+    total++
     updateQtycc(`${cc}`)
+    updateTotal(`${total}`)
 })
 
 ccMnsBtn.addEventListener('click', function(e){
     if (cc > 0) {
         cc--
+        total--
     }
     updateQtycc(`${cc}`)
+    updateTotal(`${total}`)
 })
 
 // Sugar Sprinkle + and - buttons
@@ -62,12 +77,16 @@ function updateQtysugar(displayQtysugar) {
 
 sugarPlusBtn.addEventListener('click', function() {
     sugar++
+    total++
     updateQtysugar(`${sugar}`)
+    updateTotal(`${total}`)
 })
 
 sugarMnsBtn.addEventListener('click', function(e){
     if (sugar > 0) {
         sugar--
+        total--
     }
     updateQtysugar(`${sugar}`)
+    updateTotal(`${total}`)
 })
