@@ -6,13 +6,14 @@ let gb = 0 // Gingerbread
 let cc = 0 // Chocolate Chip
 let sugar = 0 // Sugar Sprinkle
 
-// selecting the element with an id of credit
 const credit = document.querySelector('#credit')
-// selecting the element with an id of add-gb
+
 const gbPlusBtn = document.querySelector('#add-gb')
 const gbMnsBtn = document.querySelector('#minus-gb')
 const ccPlusBtn = document.querySelector('#add-cc')
 const ccMnsBtn = document.querySelector('#minus-cc')
+const sugPlusBtn = document.querySelector('#add-sugar')
+const sugMnsBtn = document.querySelector('#minus-sugar')
 
 // Code to update name display
 credit.textContent = `Created by ${yourName}`
@@ -33,4 +34,40 @@ gbMnsBtn.addEventListener('click', function(e){
         gb--
     }
     updateQtygb(`${gb}`)
+})
+
+// Chocolate Chip + and - buttons
+function updateQtycc(displayQtycc) {
+    let qtyCc = document.querySelector('#qty-cc')
+    qtyCc.innerHTML = displayQtycc
+}
+
+ccPlusBtn.addEventListener('click', function() {
+    cc++
+    updateQtycc(`${cc}`)
+})
+
+ccMnsBtn.addEventListener('click', function(e){
+    if (cc > 0) {
+        cc--
+    }
+    updateQtycc(`${cc}`)
+})
+
+// Sugar Sprinkle + and - buttons
+function updateQtycc(displayQtycc) {
+    let qtyCc = document.querySelector('#qty-cc')
+    qtyCc.innerHTML = displayQtycc
+}
+
+ccPlusBtn.addEventListener('click', function() {
+    cc++
+    updateQtycc(`${cc}`)
+})
+
+ccMnsBtn.addEventListener('click', function(e){
+    if (cc > 0) {
+        cc--
+    }
+    updateQtycc(`${cc}`)
 })
