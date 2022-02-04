@@ -12,8 +12,8 @@ const gbPlusBtn = document.querySelector('#add-gb')
 const gbMnsBtn = document.querySelector('#minus-gb')
 const ccPlusBtn = document.querySelector('#add-cc')
 const ccMnsBtn = document.querySelector('#minus-cc')
-const sugPlusBtn = document.querySelector('#add-sugar')
-const sugMnsBtn = document.querySelector('#minus-sugar')
+const sugarPlusBtn = document.querySelector('#add-sugar')
+const sugarMnsBtn = document.querySelector('#minus-sugar')
 
 // Code to update name display
 credit.textContent = `Created by ${yourName}`
@@ -55,19 +55,19 @@ ccMnsBtn.addEventListener('click', function(e){
 })
 
 // Sugar Sprinkle + and - buttons
-function updateQtycc(displayQtycc) {
-    let qtyCc = document.querySelector('#qty-cc')
-    qtyCc.innerHTML = displayQtycc
+function updateQtysugar(displayQtysugar) {
+    let qtySugar = document.querySelector('#qty-sugar')
+    qtySugar.innerHTML = displayQtysugar
 }
 
-ccPlusBtn.addEventListener('click', function() {
-    cc++
-    updateQtycc(`${cc}`)
+sugarPlusBtn.addEventListener('click', function() {
+    sugar++
+    updateQtysugar(`${sugar}`)
 })
 
-ccMnsBtn.addEventListener('click', function(e){
-    if (cc > 0) {
-        cc--
+sugarMnsBtn.addEventListener('click', function(e){
+    if (sugar > 0) {
+        sugar--
     }
-    updateQtycc(`${cc}`)
+    updateQtysugar(`${sugar}`)
 })
