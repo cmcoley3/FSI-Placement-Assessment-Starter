@@ -10,21 +10,27 @@ let sugar = 0 // Sugar Sprinkle
 const credit = document.querySelector('#credit')
 // selecting the element with an id of add-gb
 const gbPlusBtn = document.querySelector('#add-gb')
+const gbMnsBtn = document.querySelector('#minus-gb')
+const ccPlusBtn = document.querySelector('#add-cc')
+const ccMnsBtn = document.querySelector('#minus-cc')
 
 // Code to update name display
 credit.textContent = `Created by ${yourName}`
 
 // Event listener for clicks on the "+" button for Gingerbread cookies
 function updateQtygb(displayQtygb) {
-    let qtyGb = document.querySelector('.qty-gb')
+    let qtyGb = document.querySelector('#qty-gb')
     qtyGb.innerHTML = displayQtygb
 }
 
 gbPlusBtn.addEventListener('click', function() {
-// HINT: You can delete this console.log after you no longer need it!
-console.log('Gingerbread + button was clicked!')
-// TODO: Write the code to be run when the "+" button for "Gingerbread" is clicked
     gb++
     updateQtygb(`${gb}`)
 })
-// TODO: Hook up event listeners for the rest of the buttons
+
+gbMnsBtn.addEventListener('click', function(e){
+    if (gb > 0) {
+        gb--
+    }
+    updateQtygb(`${gb}`)
+})
